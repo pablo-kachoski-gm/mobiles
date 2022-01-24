@@ -2,20 +2,20 @@ import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
-import { ProductDetails, Products, NotFound } from './pages';
+import { ProductDetailsPage, ProductsPage, NotFoundPage } from './pages';
 
 function App() {
-  const defaultPage = <Products />;
+  const defaultPage = <ProductsPage />;
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={defaultPage} />
           <Route path="products">
-            <Route index element={<Products />} />
-            <Route path=":id" element={<ProductDetails />} />
+            <Route index element={<ProductsPage />} />
+            <Route path=":id" element={<ProductDetailsPage />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </div>
