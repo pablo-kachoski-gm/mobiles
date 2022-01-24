@@ -2,20 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { store } from './common/store';
+import { store } from './store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import * as serviceWorker from './serviceWorker';
 import { IntlProvider } from 'react-intl';
-import { DEFAULT_LOCALE } from './common/constants/locale';
+import { config } from './common/config';
 import { messages } from './i18n/messages';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <IntlProvider locale={DEFAULT_LOCALE} messages={messages}>
+        <IntlProvider locale={config.locale} messages={messages}>
           <App />
         </IntlProvider>
       </BrowserRouter>
