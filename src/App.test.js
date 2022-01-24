@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from './common/store';
+import { store } from './store';
 import App from './App';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
