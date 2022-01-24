@@ -4,12 +4,21 @@ import './index.css';
 import App from './App';
 import { store } from './common/store';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+
 import * as serviceWorker from './serviceWorker';
+import { IntlProvider } from 'react-intl';
+import { DEFAULT_LOCALE } from './common/constants/locale';
+import { messages } from './i18n/messages';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <IntlProvider locale={DEFAULT_LOCALE} messages={messages}>
+          <App />
+        </IntlProvider>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

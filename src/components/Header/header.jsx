@@ -1,4 +1,3 @@
-import React from 'react';
 import { useFormatMessage } from 'react-intl-hooks';
 import './header.css';
 

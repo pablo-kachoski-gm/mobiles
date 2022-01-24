@@ -1,21 +1,24 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
-import { IntlProvider } from 'react-intl';
-import { messages } from './i18n/messages';
-import { DEFAULT_LOCALE } from './common/constants/locale';
 import './App.css';
-import Header from './components/Header';
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './components/Layout';
+import { ProductDetails, Products, NotFound } from './pages';
 
 function App() {
+  const defaultPage = <Products />;
   return (
-    <IntlProvider locale={DEFAULT_LOCALE} messages={messages}>
-      <div className="App">
-        <Header />
-        <section className="App-main-section">
-          <Counter />
-        </section>
-      </div>
-    </IntlProvider>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={defaultPage} />
+          <Route path="products">
+            <Route index element={<Products />} />
+            <Route path=":id" element={<ProductDetails />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
