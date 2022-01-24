@@ -1,14 +1,27 @@
+import { useEffect } from 'react';
 import { useFormatMessage } from 'react-intl-hooks';
-import { Counter } from '../../features/counter/Counter';
+import { useDispatch } from 'react-redux';
+import { getProductDetails } from '../../store/actions/actions';
+import { useParams } from 'react-router-dom';
+import { ProductDetails } from '../../components/ProductDetails';
+import PageContainer from '../../components/PageContainer/PageContainer';
 
-const ProductDetails = () => {
+const ProductDetailsPage = () => {
   const t = useFormatMessage();
+
+  let params = useParams();
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProductDetails(params.id));
+  }, [params.id]);
+
   const pageTitle = t({ id: 'productDetails.title' });
   return (
-    <>
+    <PageContainer>
       <div>{pageTitle}</div>
-      <Counter />
-    </>
+      <ProductDetails />
+    </PageContainer>
   );
 };
-export default ProductDetails;
+export default ProductDetailsPage;
