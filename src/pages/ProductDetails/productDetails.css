@@ -1,0 +1,13 @@
+.productDetails-page-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+select {
+  width: 200px;
+  padding: 0.7em;
+}

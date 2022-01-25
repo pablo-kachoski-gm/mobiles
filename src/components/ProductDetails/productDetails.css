@@ -1,6 +1,16 @@
 .product-details-container {
   display: flex;
-  flex-direction: column;
   width: 100%;
   min-height: 500px;
+  flex-wrap: wrap;
+}
+
+.product-details-column-image {
+  flex: 50%;
+  flex-direction: column;
+}
+
+.product-details-column-details {
+  flex: 50%;
+  flex-direction: column;
 }

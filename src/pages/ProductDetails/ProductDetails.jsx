@@ -5,6 +5,7 @@ import { getProductDetails } from '../../store/actions/actions';
 import { useParams } from 'react-router-dom';
 import { ProductDetails } from '../../components/ProductDetails';
 import PageContainer from '../../components/PageContainer/PageContainer';
+import './productDetails.css';
 
 const ProductDetailsPage = () => {
   const t = useFormatMessage();
@@ -19,7 +20,7 @@ const ProductDetailsPage = () => {
   const pageTitle = t({ id: 'productDetails.title' });
   return (
     <PageContainer>
-      <div>{pageTitle}</div>
+      <div className="productDetails-page-header">{pageTitle}</div>
       <ProductDetails />
     </PageContainer>
   );
