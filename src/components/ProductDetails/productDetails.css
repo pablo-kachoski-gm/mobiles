@@ -23,3 +23,31 @@
 .product-details-column-details-description > *:not(:last-child) {
   margin-bottom: 0.5em;
 }
+
+.product-details-container select {
+  text-align: left;
+  width: 200px;
+  padding: 0.7em;
+}
+
+.product-details-form > *:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.product-details-form-field {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-details-form-field-label {
+  max-width: 250px;
+  flex: 2;
+}
+
+.product-details-form-field-item {
+  max-width: 200px;
+  flex: 8;
+}
+.product-details-submit {
+  padding: 0.5em 2em;
+}

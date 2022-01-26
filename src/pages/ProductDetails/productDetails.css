@@ -6,8 +6,3 @@
   box-sizing: border-box;
   font-weight: bold;
 }
-
-select {
-  width: 200px;
-  padding: 0.7em;
-}
