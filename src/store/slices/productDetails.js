@@ -6,7 +6,7 @@ import {
 } from '../actions/actionTypes';
 
 const INITIAL_STATE = {
-  productDetails: {},
+  productDetails: undefined,
   loadingProductDetails: false,
   productDetailsError: {
     message: ''
