@@ -7,7 +7,9 @@ const Header = () => {
   const headerTitle = t({ id: 'app.header.title' });
   return (
     <header className="App-header">
-      <Link to="/">{headerTitle}</Link>
+      <Link className="App-header-link" to="/">
+        {headerTitle}
+      </Link>
     </header>
   );
 };
