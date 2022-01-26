@@ -12,7 +12,10 @@ const ProductDetails = () => {
     (state) => state.productDetailsReducer
   );
 
-  if (loadingProductDetails) return <div className="loader">{t({ id: 'data.loading' })}</div>;
+  const { loadingAddProduct } = useSelector((state) => state.productCartReducer);
+
+  if (loadingProductDetails || loadingAddProduct)
+    return <div className="loader">{t({ id: 'data.loading' })}</div>;
 
   if (!productDetails) return <div>{t({ id: 'notFound.title' })}</div>;
 

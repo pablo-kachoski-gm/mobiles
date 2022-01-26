@@ -1,9 +1,9 @@
 .App-header {
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 2em;
   font-size: calc(10px + 2vmin);
 
   background-color: rgba(22, 83, 163, 0.2);

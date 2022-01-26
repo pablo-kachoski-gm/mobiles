@@ -1,16 +1,21 @@
 import { useFormatMessage } from 'react-intl-hooks';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../../store/actions/actions';
 import FormField from './FormField';
 
 const AddProductForm = ({ product }) => {
   const t = useFormatMessage();
   const productColorLabel = t({ id: 'productDetails.color.label' });
   const productStorageLabel = t({ id: 'productDetails.storage.label' });
+  const submitButtonText = t({ id: 'productDetails.submit.text' });
+  let dispatch = useDispatch();
   const onSubmit = (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
 
-    console.log('storage', ev.currentTarget.storage.value);
-    console.log('color', ev.currentTarget.color.value);
+    const color = ev.currentTarget.color.value;
+    const storage = ev.currentTarget.storage.value;
+    dispatch(addProduct({ productId: product.id, color, storage }));
   };
 
   const {
@@ -39,7 +44,7 @@ const AddProductForm = ({ product }) => {
       </FormField>
 
       <button className="product-details-submit" type="submit">
-        Add Product
+        {submitButtonText}
       </button>
     </form>
   );

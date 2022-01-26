@@ -1,14 +1,16 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
 
-import { GET_PRODUCTS, GET_PRODUCT_DETAILS } from '../actions/actionTypes';
+import { ADD_PRODUCT, GET_PRODUCTS, GET_PRODUCT_DETAILS } from '../actions/actionTypes';
 
 import {
   getProductsError,
   getProductsSuccess,
   getProductDetailsError,
-  getProductDetailsSuccess
+  getProductDetailsSuccess,
+  addProductSuccess,
+  addProductError
 } from '../actions/actions';
-import { fetchProduct, fetchProducts } from '../../services';
+import { fetchProduct, fetchProducts, addProduct } from '../../services';
 
 function* onGetProducts() {
   try {
@@ -28,9 +30,19 @@ function* onGetProductDetails({ payload: id }) {
   }
 }
 
+function* onAddProduct({ payload: { productId, color, storage } }) {
+  try {
+    const response = yield call(addProduct, { productId, color, storage });
+    yield put(addProductSuccess(response));
+  } catch (error) {
+    yield put(addProductError(error.response));
+  }
+}
+
 function* ProductsSaga() {
   yield takeLatest(GET_PRODUCTS, onGetProducts);
   yield takeLatest(GET_PRODUCT_DETAILS, onGetProductDetails);
+  yield takeLatest(ADD_PRODUCT, onAddProduct);
 }
 
 export default ProductsSaga;
