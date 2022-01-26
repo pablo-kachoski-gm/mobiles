@@ -12,7 +12,7 @@ const Products = ({ loading, products }) => {
   if (loading) return <div className="loader">{loadingText}</div>;
 
   const onProductClick = (id) => {
-    const navigateTo = ['products', id].join('/');
+    const navigateTo = ['/products', id].join('/');
     navigate(navigateTo);
   };
 
