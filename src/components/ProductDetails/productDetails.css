@@ -13,4 +13,13 @@
 .product-details-column-details {
   flex: 50%;
   flex-direction: column;
+  text-align: start;
+}
+
+.product-details-column-details > *:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.product-details-column-details-description > *:not(:last-child) {
+  margin-bottom: 0.5em;
 }
