@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { ProductDetails } from '../../components/ProductDetails';
 import PageContainer from '../../components/PageContainer/PageContainer';
 import './productDetails.css';
+import BackButton from '../../components/BackButton/BackButton';
 
 const ProductDetailsPage = () => {
   const t = useFormatMessage();
@@ -20,7 +21,10 @@ const ProductDetailsPage = () => {
   const pageTitle = t({ id: 'productDetails.title' });
   return (
     <PageContainer>
-      <div className="productDetails-page-header">{pageTitle}</div>
+      <div className="productDetails-page-header">
+        <BackButton />
+        {pageTitle}
+      </div>
       <ProductDetails />
     </PageContainer>
   );

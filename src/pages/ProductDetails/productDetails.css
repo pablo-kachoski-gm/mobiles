@@ -6,3 +6,7 @@
   box-sizing: border-box;
   font-weight: bold;
 }
+
+.productDetails-page-header > * {
+  margin-right: 1em;
+}
