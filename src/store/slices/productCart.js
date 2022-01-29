@@ -16,7 +16,7 @@ const productCartSlice = createSlice({
     [ADD_PRODUCT]: (state) => ({ ...state, loadingAddProduct: true }),
     [ADD_PRODUCT_SUCCESS]: (state, action) => ({
       ...state,
-      productsCount: action.payload?.count,
+      productsCount: state.productsCount + action.payload?.count,
       loadingAddProduct: false
     }),
     [ADD_PRODUCT_ERROR]: (state) => ({
