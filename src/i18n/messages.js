@@ -3,9 +3,14 @@ export const messages = {
   'app.header.cart.title': 'Cart Items:',
 
   'productDetails.title': 'Product Information',
-  'productDetails.color.label': 'Pick the color:',
-  'productDetails.storage.label': 'Pick the storage:',
+  'productDetails.color.label': 'Color',
+  'productDetails.storage.label': 'Storage',
   'productDetails.submit.text': 'Add Product',
+  'productDetails.model.label': 'Model',
+  'productDetails.brand.label': 'Brand',
+  'productDetails.weight.label': 'Weight',
+  'productDetails.dimentions.label': 'Dimentions',
+  'productDetails.price.label': 'Price',
 
   'products.title': 'Products',
   'products.search.placeholder': 'Search ...',

@@ -1,8 +1,9 @@
 .product-details-container {
   display: flex;
   width: 100%;
-  min-height: 500px;
   flex-wrap: wrap;
+
+  font-size: calc(10px + 1vmin);
 }
 
 .product-details-column-image {
@@ -10,10 +11,21 @@
   flex-direction: column;
 }
 
+.product-details-column-image > .mobile-phone-image {
+  transform: scale(2);
+  transform-origin: -50% top;
+}
+
 .product-details-column-details {
   flex: 50%;
   flex-direction: column;
   text-align: start;
+
+  background: #d8e9e4;
+  border: solid 2px gray;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 8px;
+  padding: 2em 1em;
 }
 
 .product-details-column-details > *:not(:last-child) {
@@ -22,6 +34,25 @@
 
 .product-details-column-details-description > *:not(:last-child) {
   margin-bottom: 0.5em;
+}
+
+.product-details-column-details-description > .model {
+  font-weight: bold;
+}
+
+.product-detail-description-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-detail-description-item > .label {
+  font-weight: bold;
+  flex: 1;
+}
+
+.product-detail-description-item > .value {
+  flex: 4;
 }
 
 .product-details-container select {
@@ -34,20 +65,14 @@
   margin-bottom: 0.5em;
 }
 
-.product-details-form-field {
+.product-details-form-actions {
+  margin-top: 4em;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: flex-end;
 }
-
-.product-details-form-field-label {
-  max-width: 250px;
-  flex: 2;
-}
-
-.product-details-form-field-item {
-  max-width: 200px;
-  flex: 8;
-}
-.product-details-submit {
+.product-details-form-actions-submit {
+  background: #189175;
+  color: white;
   padding: 0.5em 2em;
+  text-transform: uppercase;
 }

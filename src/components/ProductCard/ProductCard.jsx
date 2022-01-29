@@ -7,7 +7,9 @@ const ProductCard = ({ product: { model, brand, imgUrl, price }, onClick }) => {
   const formmatedPrice = t(price, { style: 'currency', currency: 'EUR' });
   return (
     <span className="product-card" onClick={onClick}>
-      <img src={imgUrl} alt="mobile-phone" />
+      <div>
+        <img src={imgUrl} alt="mobile-phone" />
+      </div>
       <div className="product-card-description">
         <div className="model">{model}</div>
         <div className="brand">{brand}</div>

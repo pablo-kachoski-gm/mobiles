@@ -1,7 +1,7 @@
 import { useFormatMessage } from 'react-intl-hooks';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../../store/actions/actions';
-import FormField from './FormField';
+import Field from './Field';
 
 const AddProductForm = ({ product }) => {
   const t = useFormatMessage();
@@ -24,7 +24,7 @@ const AddProductForm = ({ product }) => {
 
   return (
     <form onSubmit={onSubmit} className="product-details-form">
-      <FormField label={productColorLabel} htmlFor="color">
+      <Field label={productColorLabel} htmlFor="color">
         <select name="color" id="color">
           {colors?.map(({ code, name }) => (
             <option key={code} value={code}>
@@ -32,8 +32,8 @@ const AddProductForm = ({ product }) => {
             </option>
           ))}
         </select>
-      </FormField>
-      <FormField label={productStorageLabel} htmlFor="storage">
+      </Field>
+      <Field label={productStorageLabel} htmlFor="storage">
         <select name="storage" id="storage">
           {storages?.map(({ code, name }) => (
             <option key={code} value={code}>
@@ -41,11 +41,12 @@ const AddProductForm = ({ product }) => {
             </option>
           ))}
         </select>
-      </FormField>
-
-      <button className="product-details-submit" type="submit">
-        {submitButtonText}
-      </button>
+      </Field>
+      <div className="product-details-form-actions">
+        <button className="product-details-form-actions-submit" type="submit">
+          {submitButtonText}
+        </button>
+      </div>
     </form>
   );
 };
