@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useFormatMessage } from 'react-intl-hooks';
 import { useDispatch } from 'react-redux';
-import PageContainer from '../../components/PageContainer/PageContainer';
+import { PageContainer } from '../../components/PageContainer';
 import { Products } from '../../components/Products';
 import { Search } from '../../components/Search';
 import { useProductsFilter } from '../../hooks/useProductsFilter';

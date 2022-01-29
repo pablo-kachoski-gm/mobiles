@@ -1,5 +1,5 @@
 import { useFormatMessage } from 'react-intl-hooks';
-import PageContainer from '../../components/PageContainer/PageContainer';
+import { PageContainer } from '../../components/PageContainer';
 import './notFound.css';
 
 const NotFoundPage = () => {

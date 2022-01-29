@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { getProductDetails } from '../../store/actions/actions';
 import { useParams } from 'react-router-dom';
 import { ProductDetails } from '../../components/ProductDetails';
-import PageContainer from '../../components/PageContainer/PageContainer';
+import { BackButton } from '../../components/BackButton';
+import { PageContainer } from '../../components/PageContainer';
 import './productDetails.css';
-import BackButton from '../../components/BackButton/BackButton';
 
 const ProductDetailsPage = () => {
   const t = useFormatMessage();
