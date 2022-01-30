@@ -1,9 +1,9 @@
 .product-details-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  flex-wrap: wrap;
-
   font-size: calc(10px + 1vmin);
+  padding: 1em;
 }
 
 .product-details-column-image {
@@ -111,6 +111,11 @@
     flex: 4;
   }
 
+  .product-details-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   .product-details-container select {
     text-align: left;
     width: 200px;
