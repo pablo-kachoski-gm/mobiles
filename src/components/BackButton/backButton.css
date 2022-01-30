@@ -1,7 +1,19 @@
 .back-button {
-  padding: 0.5em;
   margin-right: 1em;
-  background: #189175;
-  color: white;
+  text-transform: uppercase;
+  font-family: IBM Plex Sans, sans-serif;
   font-weight: bold;
+  font-size: 0.875rem;
+  background-color: #007fff;
+  padding: 0.5em;
+  border-radius: 8px;
+  color: white;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  cursor: pointer;
+  border: none;
+}
+
+.back-button:hover {
+  background-color: #0072e5;
 }

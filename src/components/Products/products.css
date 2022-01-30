@@ -10,7 +10,7 @@
 
 .products-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(max(300px, 92% / 4), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(max(300px, 90% / 4), 1fr));
   width: 100%;
   gap: 2em;
 }
