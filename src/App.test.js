@@ -4,13 +4,13 @@ import { store } from './store';
 import App from './App';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import { DEFAULT_LOCALE } from './common/constants/locale';
 import { messages } from './i18n/messages';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
+import { config } from './common/config';
 
 const BaseApp = () => (
-  <IntlProvider locale={DEFAULT_LOCALE} messages={messages}>
+  <IntlProvider locale={config.locale} messages={messages}>
     <Provider store={store}>
       <App />
     </Provider>
@@ -25,7 +25,7 @@ describe('App routes', () => {
         <BaseApp />
       </Router>
     );
-    expect(screen.getByText(/products/i)).toBeInTheDocument();
+    expect(await screen.findByText(/products/i)).toBeInTheDocument();
   });
   test('products route renders products list page', async () => {
     const history = createMemoryHistory();
@@ -35,7 +35,7 @@ describe('App routes', () => {
         <BaseApp />
       </Router>
     );
-    expect(screen.getByText(/products/i)).toBeInTheDocument();
+    expect(await screen.findByText(/products/i)).toBeInTheDocument();
   });
   test('products with id route renders product details page', async () => {
     const history = createMemoryHistory();
