@@ -5,8 +5,7 @@ import App from './App';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import { messages } from './i18n/messages';
-import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+import { MemoryRouter } from 'react-router-dom';
 import { config } from './common/config';
 
 const BaseApp = () => (
@@ -19,41 +18,35 @@ const BaseApp = () => (
 
 describe('App routes', () => {
   test('default route renders products list page', async () => {
-    const history = createMemoryHistory();
     render(
-      <Router location={history.location} navigator={history}>
+      <MemoryRouter initialEntries={['/']} initialIndex={0}>
         <BaseApp />
-      </Router>
+      </MemoryRouter>
     );
+
     expect(await screen.findByText(/products/i)).toBeInTheDocument();
   });
   test('products route renders products list page', async () => {
-    const history = createMemoryHistory();
-    history.push('/products');
     render(
-      <Router location={history.location} navigator={history}>
+      <MemoryRouter initialEntries={['/products']}>
         <BaseApp />
-      </Router>
+      </MemoryRouter>
     );
     expect(await screen.findByText(/products/i)).toBeInTheDocument();
   });
   test('products with id route renders product details page', async () => {
-    const history = createMemoryHistory();
-    history.push('/products/11111');
     render(
-      <Router location={history.location} navigator={history}>
+      <MemoryRouter initialEntries={['/products/11111']}>
         <BaseApp />
-      </Router>
+      </MemoryRouter>
     );
     expect(await screen.findByText(/product information/i)).toBeInTheDocument();
   });
   test('unknown route renders not found page', async () => {
-    const history = createMemoryHistory();
-    history.push('/unknownURL');
     render(
-      <Router location={history.location} navigator={history}>
+      <MemoryRouter initialEntries={['/unknownURL']}>
         <BaseApp />
-      </Router>
+      </MemoryRouter>
     );
     expect(await screen.findByText(/404/i)).toBeInTheDocument();
   });
