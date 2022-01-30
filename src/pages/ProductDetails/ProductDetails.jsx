@@ -11,12 +11,12 @@ import './productDetails.css';
 const ProductDetailsPage = () => {
   const t = useFormatMessage();
 
-  let params = useParams();
-  let dispatch = useDispatch();
+  const params = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProductDetails(params.id));
-  }, [params.id]);
+  }, [dispatch, params.id]);
 
   const pageTitle = t({ id: 'productDetails.title' });
   return (

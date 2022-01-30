@@ -21,7 +21,7 @@ export function useProductsFilter() {
 
   useEffect(() => {
     return () => filterProducts.cancel();
-  }, []);
+  }, [filterProducts]);
 
   return { filteredData, filterProducts, loading: loadingProducts };
 }
