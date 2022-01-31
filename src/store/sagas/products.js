@@ -12,30 +12,30 @@ import {
 } from '../actions/actions';
 import { fetchProduct, fetchProducts, addProduct } from '../../services';
 
-function* onGetProducts() {
+export function* onGetProducts() {
   try {
     const response = yield call(fetchProducts);
     yield put(getProductsSuccess(response));
   } catch (error) {
-    yield put(getProductsError(error.response));
+    yield put(getProductsError(error));
   }
 }
 
-function* onGetProductDetails({ payload: id }) {
+export function* onGetProductDetails({ payload: id }) {
   try {
     const response = yield call(fetchProduct, id);
     yield put(getProductDetailsSuccess(response));
   } catch (error) {
-    yield put(getProductDetailsError(error.response));
+    yield put(getProductDetailsError(error));
   }
 }
 
-function* onAddProduct({ payload: { productId, color, storage } }) {
+export function* onAddProduct({ payload: { productId, color, storage } }) {
   try {
     const response = yield call(addProduct, { productId, color, storage });
     yield put(addProductSuccess(response));
   } catch (error) {
-    yield put(addProductError(error.response));
+    yield put(addProductError(error));
   }
 }
 
