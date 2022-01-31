@@ -37,7 +37,7 @@ describe('onGetProducts service', () => {
       fetchProductsMock = fetchProducts.mockImplementation(() => Promise.reject('error'));
     });
 
-    it('should call API and dispatch success action', async () => {
+    it('should call API and dispatch error action', async () => {
       const dispatched = [];
       await runSaga(
         {
@@ -82,7 +82,7 @@ describe('onGetProductDetails service', () => {
       fetchProductMock = fetchProduct.mockImplementation(() => Promise.reject('error'));
     });
 
-    it('should call API and dispatch success action', async () => {
+    it('should call API and dispatch error action', async () => {
       const dispatched = [];
       await runSaga({ dispatch: (action) => dispatched.push(action) }, onGetProductDetails, {
         payload: { id: 1 }
@@ -127,7 +127,7 @@ describe('onAddProduct service', () => {
       addProductMock = addProduct.mockImplementation(() => Promise.reject('error'));
     });
 
-    it('should call API and dispatch success action', async () => {
+    it('should call API and dispatch error action', async () => {
       const dispatched = [];
       await runSaga({ dispatch: (action) => dispatched.push(action) }, onAddProduct, {
         payload: {
